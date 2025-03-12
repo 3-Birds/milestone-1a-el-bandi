@@ -15,4 +15,14 @@
 
 
 def get_frequency(input_string:str) -> dict:
-    pass
+    if input_string is None or input_string == "":
+        return None
+    dictionary = {}
+    for char in input_string:
+        if char != " ":
+            if char in dictionary:
+                dictionary[char] += 1
+            else:
+                dictionary[char] = 1
+        
+    return dictionary
